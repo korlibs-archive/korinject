@@ -22,7 +22,7 @@ allprojects {
 	}
 
 	group 'com.soywiz'
-	version '0.0.2-SNAPSHOT'
+	version '0.3.0'
 
 	if (project == rootProject) {
 		new File(rootProject.rootDir, "korinject/common/src/main/kotlin/com/soywiz/korinject/KorinjectVersion.kt").write(
