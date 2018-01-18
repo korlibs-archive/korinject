@@ -49,25 +49,12 @@ class InstanceAsyncObjectProvider<T>(val instance: T) : AsyncObjectProvider<T> {
 }
 
 class AsyncInjector(val parent: AsyncInjector? = null, val level: Int = 0) {
-	@Deprecated("Temporally incompatible with Kotlin.JS", ReplaceWith("getWith(T::class, *instances)"))
 	suspend inline fun <reified T : Any> getWith(vararg instances: Any): T = getWith(T::class, *instances)
-
-	@Deprecated("Temporally incompatible with Kotlin.JS", ReplaceWith("get<T>(T::class)"))
 	suspend inline fun <reified T : Any> get(): T = get<T>(T::class)
-
-	@Deprecated("Temporally incompatible with Kotlin.JS", ReplaceWith("getOrNull<T>(T::class)"))
 	suspend inline fun <reified T : Any> getOrNull(): T? = getOrNull<T>(T::class)
-
-	@Deprecated("Temporally incompatible with Kotlin.JS", ReplaceWith("mapInstance(T::class, instance)"))
 	inline fun <reified T : Any> mapInstance(instance: T): AsyncInjector = mapInstance(T::class, instance)
-
-	@Deprecated("Temporally incompatible with Kotlin.JS", ReplaceWith("mapFactory(T::class, gen)"))
 	inline fun <reified T : Any> mapFactory(noinline gen: suspend AsyncInjector.() -> AsyncFactory<T>) = mapFactory(T::class, gen)
-
-	@Deprecated("Temporally incompatible with Kotlin.JS", ReplaceWith("mapSingleton(T::class, gen)"))
 	inline fun <reified T : Any> mapSingleton(noinline gen: suspend AsyncInjector.() -> T) = mapSingleton(T::class, gen)
-
-	@Deprecated("Temporally incompatible with Kotlin.JS", ReplaceWith("mapPrototype(T::class, gen)"))
 	inline fun <reified T : Any> mapPrototype(noinline gen: suspend AsyncInjector.() -> T) = mapPrototype(T::class, gen)
 
 	var fallbackProvider: (suspend (clazz: kotlin.reflect.KClass<*>, ctx: RequestContext) -> AsyncObjectProvider<*>)? = null
