@@ -4,8 +4,8 @@
 
 <!-- BADGES -->
 <p align="center">
-	<a href="https://travis-ci.org/korlibs/korinject"><img alt="Build Status" src="https://travis-ci.org/korlibs/korinject.svg?branch=master" /></a>
-	<a href="http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22korinject%22"><img alt="Maven Version" src="https://img.shields.io/github/tag/korlibs/korinject.svg?style=flat&label=maven" /></a>
+	<a href="https://github.com/korlibs/korinject/actions"><img alt="Build Status" src="https://github.com/korlibs/korinject/workflows/CI/badge.svg" /></a>
+	<a href="https://bintray.com/korlibs/korlibs/korinject"><img alt="Maven Version" src="https://img.shields.io/bintray/v/korlibs/korlibs/korinject.svg?style=flat&label=maven" /></a>
 	<a href="https://slack.soywiz.com/"><img alt="Slack" src="https://img.shields.io/badge/chat-on%20slack-green?style=flat&logo=slack" /></a>
 </p>
 <!-- /BADGES -->
