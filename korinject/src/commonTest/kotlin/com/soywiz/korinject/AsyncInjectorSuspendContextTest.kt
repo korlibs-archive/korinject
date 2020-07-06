@@ -15,5 +15,15 @@ class AsyncInjectorSuspendContextTest {
         assertEquals(string, result)
     }
 
+    @Test
+    fun testWithoutInjector() = suspendTest {
+        val injector = AsyncInjector()
+        val string = "hello"
+        injector.mapInstance(string)
+        expectException<IllegalStateException> {
+            otherFunction()
+        }
+    }
+
     suspend fun otherFunction(): String = injector().get()
 }
