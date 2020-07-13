@@ -27,9 +27,14 @@ private suspend fun fallback(
 ): AsyncObjectProvider<*> {
 	val clazz = (kclazz as kotlin.reflect.KClass<*>).java
 
+    //println("Requested $clazz")
+
 	val isPrototype = clazz.getAnnotation(Prototype::class.java) != null
 	val isSingleton = clazz.getAnnotation(Singleton::class.java) != null
 	val isAsyncFactoryClass = clazz.getAnnotation(AsyncFactoryClass::class.java) != null
+
+    //println("isPrototype=$isPrototype, isSingleton=$isSingleton, isAsyncFactoryClass=$isAsyncFactoryClass")
+    //println(clazz.declaredAnnotations.toList())
 
 	val generator: suspend AsyncInjector.() -> Any? = {
 		try {
