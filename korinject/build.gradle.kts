@@ -7,6 +7,7 @@ val coroutinesVersion: String by project
 dependencies {
     add("commonMainApi", "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
 
+    /*
     if (korlibs.hasAndroid) {
         add("androidMainApi", "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion")
     }
@@ -34,4 +35,5 @@ dependencies {
     }
     add("mingwX64MainApi", "org.jetbrains.kotlinx:kotlinx-coroutines-core-mingwx64:$coroutinesVersion")
     add("macosX64MainApi", "org.jetbrains.kotlinx:kotlinx-coroutines-core-macosx64:$coroutinesVersion")
+     */
 }
