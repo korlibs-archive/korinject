@@ -1,11 +1,15 @@
 import com.soywiz.korlibs.korlibs
 
 apply<com.soywiz.korlibs.KorlibsPlugin>()
+apply(plugin = "kotlinx-serialization")
 
 val coroutinesVersion: String by project
+val serializationRuntimeVersion: String by project
 
 dependencies {
     add("commonMainApi", "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
+    add("commonMainApi", "org.jetbrains.kotlinx:kotlinx-serialization-core:$serializationRuntimeVersion")
+    add("commonMainApi", "org.jetbrains.kotlinx:kotlinx-serialization-properties:$serializationRuntimeVersion")
 
     /*
     if (korlibs.hasAndroid) {

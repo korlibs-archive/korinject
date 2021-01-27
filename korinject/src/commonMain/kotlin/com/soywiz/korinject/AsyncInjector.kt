@@ -53,10 +53,12 @@ class AsyncInjector(val parent: AsyncInjector? = null, val level: Int = 0) {
     inline fun <reified T : Any> mapSingleton(noinline gen: suspend AsyncInjector.() -> T) = mapSingleton(T::class, gen)
     inline fun <reified T : Any> mapPrototype(noinline gen: suspend AsyncInjector.() -> T) = mapPrototype(T::class, gen)
 
+    var typeFallbackProvider: (suspend (clazz: KType, ctx: RequestContext) -> AsyncObjectProvider<*>)? = null
     var fallbackProvider: (suspend (clazz: kotlin.reflect.KClass<*>, ctx: RequestContext) -> AsyncObjectProvider<*>)? = null
     val providersByClass = LinkedHashMap<kotlin.reflect.KClass<*>, AsyncObjectProvider<*>>()
 
     val root: AsyncInjector = parent?.root ?: this
+    val nearestTypeFallbackProvider get() = typeFallbackProvider ?: parent?.typeFallbackProvider
     val nearestFallbackProvider get() = fallbackProvider ?: parent?.fallbackProvider
 
     fun child() = AsyncInjector(this, level + 1)
@@ -77,6 +79,7 @@ class AsyncInjector(val parent: AsyncInjector? = null, val level: Int = 0) {
         }
         parent?.dump()
     }
+
 
     fun <T : Any> mapInstance(clazz: KClass<T>, instance: T): AsyncInjector = this.apply {
         providersByClass[clazz] = InstanceAsyncObjectProvider<T>(instance as T)

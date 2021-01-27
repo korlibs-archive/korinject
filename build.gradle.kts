@@ -14,7 +14,12 @@ buildscript {
 
     dependencies {
         classpath("com.soywiz.korlibs:easy-kotlin-mpp-gradle-plugin:$easyPluginVersion")
+        classpath("me.tatarka:kotlin-ir-plugin:1.0-SNAPSHOT")
     }
+}
+
+plugins {
+    id("org.jetbrains.kotlin.plugin.serialization") version "1.4.30-RC" apply false
 }
 
 val buildExtraGradleFile = File(rootDir, "build.extra.gradle.kts")
