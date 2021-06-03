@@ -5,16 +5,7 @@
 <!-- BADGES -->
 <p align="center">
 	<a href="https://github.com/korlibs/korinject/actions"><img alt="Build Status" src="https://github.com/korlibs/korinject/workflows/CI/badge.svg" /></a>
-	<a href="https://bintray.com/korlibs/korlibs/korinject"><img alt="Maven Version" src="https://img.shields.io/bintray/v/korlibs/korlibs/korinject.svg?style=flat&label=maven" /></a>
+    <a href="https://search.maven.org/artifact/com.soywiz.korlibs.korinject/korinject"><img alt="Maven Central" src="https://img.shields.io/maven-central/v/com.soywiz.korlibs.korinject/korinject"></a>
 	<a href="https://discord.korge.org/"><img alt="Discord" src="https://img.shields.io/discord/728582275884908604?logo=discord" /></a>
 </p>
 <!-- /BADGES -->
-
-<!-- SUPPORT -->
-<h2 align="center">Support korinject</h2>
-<p align="center">
-If you like korinject, or want your company logo here, please consider <a href="https://github.com/sponsors/soywiz">becoming a sponsor ★</a>,<br />
-in addition to ensure the continuity of the project, you will get exclusive content.
-</p>
-<!-- /SUPPORT -->
-
